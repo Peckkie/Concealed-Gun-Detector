@@ -1,0 +1,55 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}Upload{% endblock %}
+
+{% block main %}
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+
+        <center><h1>Detecting Human with Concealed Gun</h1></center>
+        <h4>Upload a Video</h4>
+        <hr>
+
+        <form action="/" method="POST" enctype="multipart/form-data">     
+          
+          <div class="form-group">
+            <label>Select Video [Format : MP4, MOV, AVI]</label>
+            <div class="custom-file" >
+              <input type="file" class="custom-file-input" name="video" id="video" aria-describedby="inputvideoAddon">
+              <label class="custom-file-label" for="video" >Select Video...</label>
+            </div>
+            <script type="text/javascript">
+
+              $('.custom-file-input').change(function (e) {
+                  $(this).next('.custom-file-label').html(e.target.files[0].name);
+              });
+          
+            </script>
+
+          </div>
+
+          <button type="submit" class="btn btn-primary">Upload</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+{% endblock %}

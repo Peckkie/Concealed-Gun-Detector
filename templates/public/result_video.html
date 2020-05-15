@@ -1,0 +1,23 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %}Result Video{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <center><h1>Detecting Human with Concealed Gun</h1>
+            <p> <B><FONT COLOR=LIME>กรอบสีเขียว</FONT></B> คือ บุคคลทั่วไป <br>
+                <B><FONT COLOR=red>กรอบสีแดง</FONT></B> คือ บุคคลที่มีการ<U>อำพรางอาวุธปืน</U></p>
+
+            <video width="800" controls>
+              <source src="{{url_for('static', filename=videoresult)}}" type="video/mp4">
+            </video>
+            </center>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
